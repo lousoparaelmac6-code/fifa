@@ -1,24 +1,44 @@
 # Football Arena
 
-Juego de fútbol 2D jugable, creado como punto de partida para un proyecto de fútbol independiente.
+Prototipo independiente de fútbol 2D en evolución. La versión actual es un punto de partida jugable, no un clon comercial 3D de EA SPORTS FC ni de eFootball.
 
-## Cómo jugar
-- Abrí `index.html` en un navegador moderno.
+## Ejecutar
+
+No requiere dependencias externas. Abrí `index.html` en un navegador moderno.
+
+## Controles
+
 - **WASD / flechas:** mover al jugador.
 - **J:** pase.
 - **K / Espacio:** rematar.
-- **Q:** cambiar jugador seleccionado.
-- En móvil, usá los controles táctiles.
-- Elegí Amateur, Pro o Leyenda antes o durante el partido.
+- **Q:** cambiar el jugador controlado.
+- En pantallas táctiles aparecen controles de movimiento, pase y remate.
+- Dificultad: Amateur, Pro o Leyenda.
 
-## Incluye
-- Partido con marcador, reloj y final.
-- Jugadores controlables, compañeros y rivales con IA básica.
-- Pases, remates, recuperación, arquero y goles.
-- Dificultad seleccionable, estadísticas y controles táctiles.
+## Estado implementado
+
+- Campo 2D, marcador, reloj, pausa, reinicio y pantalla final.
+- Once jugadores de campo por equipo y un portero por lado.
+- Compañeros y rivales con comportamiento básico de seguimiento y presión.
+- Pase, remate, recuperación, goles y atajadas.
+- Estadísticas sencillas, dificultad y controles táctiles.
 - Interfaz adaptable a pantallas pequeñas.
+- Pruebas automáticas iniciales y flujo de validación de GitHub Actions.
 
-## Estado
-Esta es una primera versión jugable 2D, no un juego 3D comercial ni un producto oficial de EA SPORTS/FIFA. Próximas etapas recomendadas: separar módulos, añadir menú de modos, equipos y torneos, animaciones/audio, pruebas automatizadas y pipeline de empaquetado.
+## Validación
 
-No contiene recursos oficiales de FIFA/EA ni requiere claves o secretos.
+Con Node.js 22 o compatible:
+
+```sh
+npm test
+```
+
+Estas pruebas verifican sintaxis y elementos estructurales básicos; no reemplazan jugar partidos manualmente ni prueban todas las reglas.
+
+## Próximas fases
+
+Consultar [docs/ARQUITECTURA_Y_PLAN.md](docs/ARQUITECTURA_Y_PLAN.md) para la hoja de ruta: simulación estable, reglas, IA táctica, animación, modos y, más adelante, distribución y online.
+
+## Derechos
+
+Proyecto independiente. No incluye recursos oficiales de FIFA, EA SPORTS o Konami, ni pretende estar afiliado a esas marcas. Los equipos y recursos deberán ser originales o contar con licencias adecuadas.
