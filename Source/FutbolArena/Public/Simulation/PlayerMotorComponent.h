@@ -13,6 +13,7 @@ UCLASS(ClassGroup=(Football),meta=(BlueprintSpawnableComponent))
 class FUTBOLARENA_API UPlayerMotorComponent : public UActorComponent {
  GENERATED_BODY()
 public:
+ UPlayerMotorComponent();
  UFUNCTION(BlueprintCallable,Category="Motor") void SetDesiredVelocity(const FVector& DesiredVelocityMetersPerSecond);
  UFUNCTION(BlueprintPure,Category="Motor") FPlayerMotorState GetMotorState() const { return State; }
  void SimulateFixedStep(float StepSeconds);
