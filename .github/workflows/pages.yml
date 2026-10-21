@@ -6,7 +6,6 @@ on:
 permissions:
   contents: read
   pages: write
-  administration: write
   id-token: write
 concurrency:
   group: github-pages
