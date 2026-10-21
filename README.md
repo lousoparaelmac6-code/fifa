@@ -1,21 +1,16 @@
-# Fútbol Arena
+# Fútbol Arena — reconstrucción Unreal Engine
 
-Juego arcade de fútbol 5 contra 5, original e independiente, jugable con teclado o pantalla táctil. No necesita servidor ni dependencias.
+Esta rama inicia una base nativa de Unreal Engine 5.6 y C++, siguiendo el prompt maestro de ingeniería de juegos de fútbol. La rama `main` y el juego web anterior se conservan intactos como referencia; esta rama no cambia Pages.
 
-## Ejecutar
-Abrí `index.html` en un navegador moderno.
+## Arquitectura inicial
+- `MatchSimulationSubsystem`: reloj de simulación con paso fijo de 1/60 s, seed explícita y diagnóstico.
+- `PlayerMotorComponent`: locomoción desacoplada, aceleración y límites de velocidad/giro.
+- `BallPhysicsComponent`: estado físico del balón, impulso, gravedad, rebote y fricción inicial.
+- Pruebas de contrato para límites del motor y del impulso del balón.
 
-## Controles
-- **WASD / flechas:** mover al jugador activo.
-- **Espacio:** mantener y soltar para cargar un tiro.
-- **E:** pase al compañero.
-- **Q:** cambiar al jugador de campo más cercano a la pelota.
-- **Shift:** sprint.
-- **Escape:** pausar.
-- En móvil aparecen controles táctiles.
+## Estado real
+**Andamiaje inicial, no juego completo.** Faltan estadio, cámara, input, equipos, control del balón, IA táctica, reglas arbitrales, animaciones, audio, modos, guardado, red e interfaz. Las componentes todavía no están conectadas al subsistema ni calibradas. Los parámetros son provisionales.
 
-## GitHub Pages
-El workflow `.github/workflows/pages.yml` prepara y publica el sitio. En **Settings → Pages**, seleccioná **GitHub Actions** como fuente si todavía no está habilitado. Después revisá **Actions**. URL esperada: https://lousoparaelmac6-code.github.io/fifa/
+Instalar Unreal Engine 5.6 y Visual Studio 2022 con desarrollo de juegos C++. Abrir `FutbolArena.uproject`, generar archivos del proyecto si se solicita y compilar `FutbolArenaEditor`. Este entorno remoto no tiene Unreal Engine disponible, por lo que no afirmo que compile ni que las pruebas pasen.
 
-## Alcance
-Prototipo arcade con cancha Canvas, movimiento, física de pelota, goles, reloj, porteros, IA básica, posesión, tiros, pausa, reinicio y controles táctiles. No reproduce el motor ni contenido propietario de EA Sports FIFA.
+Cada sistema debe tener unidades documentadas, parámetros versionados, seeds reproducibles, telemetría y pruebas de regresión. La presentación no decide goles, posesión ni contactos. No se copiará código ni recursos propietarios de EA SPORTS FC o Konami eFootball.
