@@ -4,7 +4,6 @@
   "private": true,
   "description": "Prototipo independiente de fútbol 2D",
   "scripts": {
-    "test": "node --test tests/*.test.cjs",
-    "check:game": "node --check tests/extracted-game.js"
+    "test": "node --test tests/*.test.cjs"
   }
 }
