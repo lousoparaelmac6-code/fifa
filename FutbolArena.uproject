@@ -1,0 +1,13 @@
+{
+  "FileVersion": 3,
+  "EngineAssociation": "5.6",
+  "Category": "Games",
+  "Description": "Núcleo original de simulación de fútbol.",
+  "Modules": [
+    {
+      "Name": "FutbolArena",
+      "Type": "Runtime",
+      "LoadingPhase": "Default"
+    }
+  ]
+}
