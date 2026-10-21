@@ -13,6 +13,7 @@ UCLASS(ClassGroup=(Football),meta=(BlueprintSpawnableComponent))
 class FUTBOLARENA_API UBallPhysicsComponent : public UActorComponent {
  GENERATED_BODY()
 public:
+ UBallPhysicsComponent();
  UFUNCTION(BlueprintCallable,Category="Ball") void ApplyKickImpulse(const FVector& ImpulseNewtonSeconds);
  UFUNCTION(BlueprintPure,Category="Ball") FBallSimulationState GetBallState() const { return State; }
  void SimulateFixedStep(float StepSeconds);
