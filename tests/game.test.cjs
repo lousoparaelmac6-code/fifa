@@ -7,10 +7,13 @@ const { spawnSync } = require('node:child_process');
 
 const html = fs.readFileSync(path.join(__dirname, '..', 'index.html'), 'utf8');
 function inlineGameScript(source) {
-  const start = source.indexOf('<script>');
-  const end = source.indexOf('</script>', start + 8);
-  assert.ok(start >= 0 && end > start, 'Debe existir el script principal del juego');
-  return source.slice(start + 8, end);
+  // Evitar regex aquí: el patrón anterior quedó mal escapado y rompía Node antes de ejecutar los tests.
+  const tagStart = source.indexOf('<script');
+  const contentStart = tagStart < 0 ? -1 : source.indexOf('>', tagStart) + 1;
+  const end = contentStart > 0 ? source.indexOf('</script>', contentStart) : -1;
+  assert.ok(tagStart >= 0 && contentStart > tagStart && end > contentStart,
+    'Debe existir el script principal del juego');
+  return source.slice(contentStart, end);
 }
 
 test('el JavaScript integrado del juego tiene sintaxis válida', () => {
